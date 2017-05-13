@@ -3,15 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>WebPush_Notification</title>
-	<link rel="manifest" href="js/manifest.json">
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
   <script>
     var OneSignal = window.OneSignal || [];
     OneSignal.push(["init", {
       appId: "85ccd65a-b8d3-4bcf-9b9e-29c6ca7c7b32",
-      autoRegister: false,
+      autoRegister: false, /* Set to true to automatically prompt visitors */
+      subdomainName: 'webpushtion',
+      /*
+      subdomainName: Use the value you entered in step 1.4: http://imgur.com/a/f6hqN
+      */
+      httpPermissionRequest: {
+        enable: true
+      },
       notifyButton: {
-        enable: true /* Set to false to hide */
+          enable: false /* Set to false to hide */
       }
     }]);
   </script>
